@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "83ed6e7b-269c-4c1f-ba59-ab1f24784c58",
+		"name": "InternetSpeedCheck-KPN",
+		"description": "This API allows you to check the speed of the internet and the technology at an address. The API takes the postcode, house number and house extension, sends the request to the backend to retrieve real time information about the internet service at the address.\n### Key highlights\n- **Sandbox:** full-fledged capabilities.\n- **Security:**  HTTPS, Oauth, Rate limit\n- **Versioning:**  supports version-less API, version tight. If no version is provided (in header) it defaults to latest version. \n\n---\n## [KPN API Store](https://developer.kpn.com/)<br/> [Getting Started](https://developer.kpn.com/getting-started)\n---\n\nContact Support:\n Name: API Support\n Email: api_developer@kpn.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "4406147-83ed6e7b-269c-4c1f-ba59-ab1f24784c58"
+	},
+	"item": [
+		{
+			"name": "offer",
+			"item": [
+				{
+					"name": "get info",
+					"id": "e977b3d6-def7-4a98-947d-0608cc79d736",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "API Version. If no version is provided it defaults to latest version.",
+								"key": "api-version",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"service_address\": {\n    \"house_number\": \"{{house_number}}\",\n    \"zip_code\": \"{{zip_code}}\",\n    \"house_number_extension\": \"{{house_number_extension}}\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/offer",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"offer"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "",
+									"description": "API Version. If no version is provided it defaults to latest version.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Retrieves the information about internet connection and technology for the given address identified by postcode, house number and house extension"
+					},
+					"response": [
+						{
+							"id": "4af214ba-04a6-406b-af35-a2ec39d546a4",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"service_address\": {\n    \"house_number\": \"{{house_number}}\",\n    \"zip_code\": \"{{zip_code}}\",\n    \"house_number_extension\": \"{{house_number_extension}}\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/offer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"offer"
+									],
+									"query": [
+										{
+											"key": "api-version",
+											"value": "",
+											"description": "API Version. If no version is provided it defaults to latest version.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Retrieves the information about internet connection and technology for the given address identified by postcode, house number and house extension"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"available_on_address\": {\n    \"technologies\": [\n      {\n        \"name\": \"<string>\",\n        \"download\": \"<integer>\",\n        \"upload\": \"<integer>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"download\": \"<integer>\",\n        \"upload\": \"<integer>\"\n      }\n    ]\n  },\n  \"fixed_info\": {\n    \"copper_access\": \"<boolean>\",\n    \"fiber_access\": \"<boolean>\",\n    \"hybrid_access\": \"<boolean>\",\n    \"mobile_access\": \"<boolean>\"\n  },\n  \"fiber_info\": {\n    \"thirdparty_delivery\": \"<boolean>\",\n    \"thirdparty_permission\": \"<boolean>\",\n    \"thirdparty_name\": \"<string>\",\n    \"construction_type\": \"<string>\",\n    \"planned_fiber_to_the_home_date\": \"<date>\",\n    \"planned_fiber_to_the_home_description\": \"<string>\",\n    \"civil_date\": \"<date>\",\n    \"wholesale_broadband_access_plan_date\": \"<date>\",\n    \"wholesale_broadband_access_plan_date_description\": \"<string>\",\n    \"nl_type\": \"<string>\",\n    \"phase\": \"<string>\"\n  },\n  \"bandwidth\": {\n    \"up\": \"<integer>\",\n    \"down\": \"<integer>\"\n  },\n  \"alerts\": {\n    \"code\": \"<string>\",\n    \"description\": \"<string>\",\n    \"code_message\": \"<string>\"\n  }\n}"
+						}
+					]
+				}
+			],
+			"id": "78d210e9-b78c-40ff-98ee-cfa796556586"
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "clientSecret",
+				"value": "{{client_secret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "access_token",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d10f010f-9db8-41f9-ae67-6c22f5337e84",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8ab41e03-4748-48ce-a5a0-86cd7298b257",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9f6f46ad-68b0-4167-a76a-0df31f3d16e7",
+			"key": "baseUrl",
+			"value": "https://api-prd.kpn.com/network/kpn/internet-speed-check"
+		},
+		{
+			"id": "397bb6e0-21d1-4ebe-a9e9-8d6c776db4ce",
+			"key": "client_id",
+			"value": "KukARHXs3nncHigG5MDnmHcx4QsyM3QK",
+			"type": "string"
+		},
+		{
+			"id": "4ed96343-0794-4fcd-900e-10ac444073b8",
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "6194d951-ae3c-4679-a0d7-b00ff035ddee",
+			"key": "house_number",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "7d23711a-0385-4188-8044-54a152270b55",
+			"key": "zip_code",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "9ff1b863-59a2-44a6-8be2-b55126e37dff",
+			"key": "house_number_extension",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
