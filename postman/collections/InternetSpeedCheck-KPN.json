@@ -136,6 +136,11 @@
 		"type": "oauth2",
 		"oauth2": [
 			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			},
+			{
 				"key": "clientSecret",
 				"value": "{{client_secret}}",
 				"type": "string"
@@ -169,11 +174,6 @@
 				"key": "addTokenTo",
 				"value": "header",
 				"type": "string"
-			},
-			{
-				"key": "client_authentication",
-				"value": "header",
-				"type": "string"
 			}
 		]
 	},
@@ -181,7 +181,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d10f010f-9db8-41f9-ae67-6c22f5337e84",
+				"id": "a1c8d5e6-2014-4e25-994e-b384ffcf9722",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -191,7 +191,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "8ab41e03-4748-48ce-a5a0-86cd7298b257",
+				"id": "e59020b0-98ec-40f8-bcc6-fd7522f1452f",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -201,36 +201,36 @@
 	],
 	"variable": [
 		{
-			"id": "9f6f46ad-68b0-4167-a76a-0df31f3d16e7",
+			"id": "93e26f62-d2fe-4381-9470-f137c27fc152",
 			"key": "baseUrl",
 			"value": "https://api-prd.kpn.com/network/kpn/internet-speed-check"
 		},
 		{
-			"id": "397bb6e0-21d1-4ebe-a9e9-8d6c776db4ce",
+			"id": "504daf39-7725-4689-8900-e45f3863952b",
 			"key": "client_id",
-			"value": "KukARHXs3nncHigG5MDnmHcx4QsyM3QK",
+			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "4ed96343-0794-4fcd-900e-10ac444073b8",
+			"id": "0067a951-d495-45c8-a914-0bdde7406427",
 			"key": "client_secret",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "6194d951-ae3c-4679-a0d7-b00ff035ddee",
+			"id": "48eb0346-976f-4b63-898f-cfe1729dd3ab",
 			"key": "house_number",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "7d23711a-0385-4188-8044-54a152270b55",
+			"id": "ebf16135-4f99-4dfd-a652-6477b75d25ba",
 			"key": "zip_code",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "9ff1b863-59a2-44a6-8be2-b55126e37dff",
+			"id": "3d933fb2-0a08-4847-9349-3fdb6cfdb617",
 			"key": "house_number_extension",
 			"value": "",
 			"type": "string"
